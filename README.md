@@ -1,4 +1,4 @@
-Android 期末報告
+﻿Android 期末報告
 
 目前進度
 
@@ -34,5 +34,16 @@ git add -A
 git commit -m "註解"
 
 git push origin master
+
+
+專案下載
+
+git pull
+
+
+專案複製
+
+git clone GIT網址
+
 
 ssh金鑰設定網址https://itw01.com/VIWCESK.html
