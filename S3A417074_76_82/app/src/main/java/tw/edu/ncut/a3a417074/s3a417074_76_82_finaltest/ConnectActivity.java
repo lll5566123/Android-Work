@@ -1,8 +1,8 @@
 package tw.edu.ncut.a3a417074.s3a417074_76_82_finaltest;
 
 import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 
@@ -19,6 +19,7 @@ public class ConnectActivity extends AppCompatActivity implements View.OnClickLi
 
         btConnect_master.setOnClickListener(this);
         btConnect_find.setOnClickListener(this);
+
     }
 
     @Override

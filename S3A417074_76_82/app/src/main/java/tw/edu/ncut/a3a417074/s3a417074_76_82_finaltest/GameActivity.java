@@ -1,16 +1,21 @@
 package tw.edu.ncut.a3a417074.s3a417074_76_82_finaltest;
 
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.util.DisplayMetrics;
 import android.view.View;
 import android.widget.GridLayout;
 import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.Space;
 
 public class GameActivity extends AppCompatActivity implements View.OnClickListener {
     private ImageButton[] ImageButton;
     private int count = 0;
+    private String Picture[] = new String[42];
+
+    public GameActivity() {
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -47,10 +52,12 @@ public class GameActivity extends AppCompatActivity implements View.OnClickListe
             ImageButton[i].setId(i);
             ImageButton[i].setTag(String.valueOf(i));
             ImageButton[i].setOnClickListener(this);
+            ImageButton[i].setScaleType(ImageView.ScaleType.CENTER_CROP);
             gridLayout.addView(ImageButton[i], btnWidth, btnHeight);
         }
         Space s = new Space(this);
         gridLayout.addView(s, btnWidth, btnHeight);
+
     }
     //ImageButton[0].setImageDrawable(getResources().getDrawable(R.drawable.test));//設定切換圖片
     @Override
@@ -61,6 +68,7 @@ public class GameActivity extends AppCompatActivity implements View.OnClickListe
                 switchPicture(tag);
                 break;
             case 1 :
+                switchPicture(tag);
                 break;
             case 2 :
                 switchPicture(tag);
@@ -189,12 +197,15 @@ public class GameActivity extends AppCompatActivity implements View.OnClickListe
     }
 
     private void switchPicture(int number) {
-        count++;
-        if(count%2 == 0){
-            ImageButton[number].setImageDrawable(getResources().getDrawable(R.drawable.test));//設定切換圖片
+        if(Picture[number] == null){
+            count++;
+            if(count%2 == 0){
+                ImageButton[number].setImageDrawable(getResources().getDrawable(R.drawable.test));//設定切換圖片
+            }
+            else{
+                ImageButton[number].setImageDrawable(getResources().getDrawable(R.drawable.test1));//設定切換圖片
+            }
         }
-        else{
-            ImageButton[number].setImageDrawable(getResources().getDrawable(R.drawable.test1));//設定切換圖片
-        }
+       Picture[number] = "F1";
     }
 }
