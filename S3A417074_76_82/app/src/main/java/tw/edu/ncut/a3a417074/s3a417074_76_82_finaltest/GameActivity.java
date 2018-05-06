@@ -8,6 +8,7 @@ import android.widget.GridLayout;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.Space;
+import android.widget.Toast;
 
 public class GameActivity extends AppCompatActivity implements View.OnClickListener {
     private ImageButton[] ImageButton;
@@ -53,159 +54,219 @@ public class GameActivity extends AppCompatActivity implements View.OnClickListe
             ImageButton[i].setTag(String.valueOf(i));
             ImageButton[i].setOnClickListener(this);
             ImageButton[i].setScaleType(ImageView.ScaleType.CENTER_CROP);
+            Picture[i] = "0";
             gridLayout.addView(ImageButton[i], btnWidth, btnHeight);
         }
         Space s = new Space(this);
         gridLayout.addView(s, btnWidth, btnHeight);
 
     }
-    //ImageButton[0].setImageDrawable(getResources().getDrawable(R.drawable.test));//設定切換圖片
+
     @Override
     public void onClick(View v) {
         int tag = Integer.valueOf(String.valueOf(v.getTag()));
-        switch (tag){
-            case 0 :
+        switch (tag) {
+            case 0:
                 switchPicture(tag);
                 break;
-            case 1 :
+            case 1:
                 switchPicture(tag);
                 break;
-            case 2 :
+            case 2:
                 switchPicture(tag);
                 break;
-            case 3 :
+            case 3:
                 switchPicture(tag);
                 break;
-            case 4 :
+            case 4:
                 switchPicture(tag);
                 break;
-            case 5 :
+            case 5:
                 switchPicture(tag);
                 break;
-            case 6 :
+            case 6:
                 switchPicture(tag);
                 break;
-            case 7 :
+            case 7:
                 switchPicture(tag);
                 break;
-            case 8 :
+            case 8:
                 switchPicture(tag);
                 break;
-            case 9 :
+            case 9:
                 switchPicture(tag);
                 break;
-            case 10 :
+            case 10:
                 switchPicture(tag);
                 break;
-            case 11 :
+            case 11:
                 switchPicture(tag);
                 break;
-            case 12 :
+            case 12:
                 switchPicture(tag);
                 break;
-            case 13 :
+            case 13:
                 switchPicture(tag);
                 break;
-            case 14 :
+            case 14:
                 switchPicture(tag);
                 break;
-            case 15 :
+            case 15:
                 switchPicture(tag);
                 break;
-            case 16 :
+            case 16:
                 switchPicture(tag);
                 break;
-            case 17 :
+            case 17:
                 switchPicture(tag);
                 break;
-            case 18 :
+            case 18:
                 switchPicture(tag);
                 break;
-            case 19 :
+            case 19:
                 switchPicture(tag);
                 break;
-            case 20 :
+            case 20:
                 switchPicture(tag);
                 break;
-            case 21 :
+            case 21:
                 switchPicture(tag);
                 break;
-            case 22 :
+            case 22:
                 switchPicture(tag);
                 break;
-            case 23 :
+            case 23:
                 switchPicture(tag);
                 break;
-            case 24 :
+            case 24:
                 switchPicture(tag);
                 break;
-            case 25 :
+            case 25:
                 switchPicture(tag);
                 break;
-            case 26 :
+            case 26:
                 switchPicture(tag);
                 break;
-            case 27 :
+            case 27:
                 switchPicture(tag);
                 break;
-            case 28 :
+            case 28:
                 switchPicture(tag);
                 break;
-            case 29 :
+            case 29:
                 switchPicture(tag);
                 break;
-            case 30 :
+            case 30:
                 switchPicture(tag);
                 break;
-            case 31 :
+            case 31:
                 switchPicture(tag);
                 break;
-            case 32 :
+            case 32:
                 switchPicture(tag);
                 break;
-            case 33 :
+            case 33:
                 switchPicture(tag);
                 break;
-            case 34 :
+            case 34:
                 switchPicture(tag);
                 break;
-            case 35 :
+            case 35:
                 switchPicture(tag);
                 break;
-            case 36 :
+            case 36:
                 switchPicture(tag);
                 break;
-            case 37 :
+            case 37:
                 switchPicture(tag);
                 break;
-            case 38 :
+            case 38:
                 switchPicture(tag);
                 break;
-            case 39 :
+            case 39:
                 switchPicture(tag);
                 break;
-            case 40 :
+            case 40:
                 switchPicture(tag);
                 break;
-            case 41 :
+            case 41:
                 switchPicture(tag);
                 break;
-            case 42 :
+            case 42:
                 switchPicture(tag);
                 break;
         }
     }
 
+    //ImageButton[0].setImageDrawable(getResources().getDrawable(R.drawable.test));//設定切換圖片
     private void switchPicture(int number) {
-        if(Picture[number] == null){
-            count++;
-            if(count%2 == 0){
-                ImageButton[number].setImageDrawable(getResources().getDrawable(R.drawable.test));//設定切換圖片
-            }
-            else{
-                ImageButton[number].setImageDrawable(getResources().getDrawable(R.drawable.test1));//設定切換圖片
-            }
+        switch (Picture[number]) {
+            case "Water_pipe_straight":
+                ImageButton[number].setImageDrawable(getResources().getDrawable(R.drawable.water_pipe_horizontal));//設定切換圖片
+                Picture[number] = "Water_pipe_horizontal";
+                break;
+            case "Water_pipe_horizontal":
+                ImageButton[number].setImageDrawable(getResources().getDrawable(R.drawable.water_pipe_straight));//設定切換圖片
+                Picture[number] = "Water_pipe_straight";
+                break;
+            case "Water_pipe_cross":
+                //nothig
+                break;
+            case "Water_pipe_left_up":
+                ImageButton[number].setImageDrawable(getResources().getDrawable(R.drawable.water_pipe_right_up));//設定切換圖片
+                Picture[number] = "Water_pipe_right_up";
+                break;
+            case "Water_pipe_left_down":
+                ImageButton[number].setImageDrawable(getResources().getDrawable(R.drawable.water_pipe_left_up));//設定切換圖片
+                Picture[number] = "Water_pipe_left_up";
+                break;
+            case "Water_pipe_right_up":
+                ImageButton[number].setImageDrawable(getResources().getDrawable(R.drawable.water_pipe_right_down));//設定切換圖片
+                Picture[number] = "Water_pipe_right_down";
+                break;
+            case "Water_pipe_right_down":
+                ImageButton[number].setImageDrawable(getResources().getDrawable(R.drawable.water_pipe_left_down));//設定切換圖片
+                Picture[number] = "Water_pipe_left_down";
+                break;
+            case "0":
+                int Water_pipe_number = (int) (Math.random() * 7) + 1;
+                first_switchPicture(Water_pipe_number, number);
+                Toast.makeText(this, Water_pipe_number + "", Toast.LENGTH_SHORT).show();
+                break;
         }
-       Picture[number] = "F1";
+    }
+
+    private void first_switchPicture(int water_pipe_number, int number) {
+        switch (water_pipe_number) {
+            case 1:
+                ImageButton[number].setImageDrawable(getResources().getDrawable(R.drawable.water_pipe_straight));//設定切換圖片
+                Picture[number] = "Water_pipe_straight";
+                break;
+            case 2:
+                ImageButton[number].setImageDrawable(getResources().getDrawable(R.drawable.water_pipe_horizontal));//設定切換圖片
+                Picture[number] = "Water_pipe_horizontal";
+                break;
+            case 3:
+                ImageButton[number].setImageDrawable(getResources().getDrawable(R.drawable.water_pipe_cross));//設定切換圖片
+                Picture[number] = "Water_pipe_cross";
+                break;
+            case 4:
+                ImageButton[number].setImageDrawable(getResources().getDrawable(R.drawable.water_pipe_left_up));//設定切換圖片
+                Picture[number] = "Water_pipe_left_up";
+                break;
+            case 5:
+                ImageButton[number].setImageDrawable(getResources().getDrawable(R.drawable.water_pipe_left_down));//設定切換圖片
+                Picture[number] = "Water_pipe_left_down";
+                break;
+            case 6:
+                ImageButton[number].setImageDrawable(getResources().getDrawable(R.drawable.water_pipe_right_up));//設定切換圖片
+                Picture[number] = "Water_pipe_right_up";
+                break;
+            case 7:
+                ImageButton[number].setImageDrawable(getResources().getDrawable(R.drawable.water_pipe_right_down));//設定切換圖片
+                Picture[number] = "Water_pipe_right_down";
+                break;
+        }
     }
 }
+/**/
